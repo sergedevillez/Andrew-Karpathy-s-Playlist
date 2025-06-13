@@ -5,6 +5,15 @@ This is a project formed of multiples small projects. The purpose of this projec
 
 ## 1. Build Makemore
 Source : [Youtube](https://www.youtube.com/watch?v=PaCmpygFfXo)
+Construction of:
+- Bigram (one character predict the enxt one wit a lookup table of counts)
+- Bags of words
+- MLP
+- RNN
+- GRU
+- Transformer (equivalent to GPT 2;with of course far less data and training)
+
+=> This construct single words (in this case: "name"-like single words)
 
 ## 2. Build GPT
 Source : [Youtube](https://www.youtube.com/watch?v=kCc8FmEb1nY)
@@ -15,6 +24,8 @@ Building a transformer purely decoder which take an input (text from Shakespear)
     - Get the unique characters
     - Create a lookup table for convertir to and from the tokens' table.
 3. Plug the token in the language model by using an embedding table. 65 embedding tokens would make 65 rows. Basically, each rows is a list of parameters for each unique characters. => a vector that feeds into the transformer. The parameters will be created as the vector evolve according to each usage new or repeated of the token in a sentence/string.
+
+=> This construct multiples sentences (in this case: shakespear-like sentences.)
 
 ## 3. Build GPT tokenizer
 Source : [Youtube](https://www.youtube.com/watch?v=zduSFxRajkE)
