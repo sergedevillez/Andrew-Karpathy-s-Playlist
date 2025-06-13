@@ -5,6 +5,7 @@ This is a project formed of multiples small projects. The purpose of this projec
 
 ## 1. Build Makemore
 Source : [Youtube](https://www.youtube.com/watch?v=PaCmpygFfXo)
+Source : [Youtube - Part 2](https://www.youtube.com/watch?v=TCH_1BHY58I)
 Construction of:
 - Bigram (one character predict the enxt one wit a lookup table of counts)
 - Bags of words
