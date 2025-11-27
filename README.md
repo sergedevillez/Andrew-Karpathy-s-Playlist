@@ -1,10 +1,37 @@
-### General description
-
+# General description
 This is a project formed of multiples small projects. The purpose of this project is to gain a basic understanding of languages models and their terms by following the multiple videos made by Andrej Karpathy on [Youtube](https://www.youtube.com/@AndrejKarpathy). More sources may be added later accordingly to understanding and interest.
 See the [Youtube playlist](https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)
 
+# Projects
 ## 1. Build Micrograd
 Source : [Youtube](https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)
+Micrograde is a tiny autograd (Automatic gradient) engine and neural network library implemented in pure Python. 
+it implement backpropagation. It allow to iteratively tune the weights of the neural network to minimize the loss function and terefore improve the performance of the model on a given task.
+**Example usage**
+```python
+from micrograd.engine import Value
+# This show some "random basic operations. Behind the scene, micrograd will build a computational graph to keep track of the operations applied to the Value objects. (ie : c is a value, c is the result of a computation of a and b, etc.) => c is a child node of a and b.
+# When calling backward on the final output g, micrograd will traverse the computational graph in reverse order, applying the chain rule to compute the gradients of g with respect to a and b.
+a = Value(-4.0)
+b = Value(2.0)
+c = a + b
+d = a * b + b**3
+c += c + 1
+c += 1 + c + (-a)
+d += d * 2 + (b + a).relu()
+e = c - d
+f = e**2
+g = f / 2.0
+g += 10.0 / f
+print(f'{g.data:.4f}')  # Output: 24.7041, the outcome of the forward pass
+g.backward()
+print(f'{a.grad:.4f}')  # Output: 138.6264, the numerical value of dg/da
+print(f'{b.grad:.4f}')  # Output: 645.5200, the numerical value of dg/db this is important to see how the output g changes with respect to small changes in b
+```
+
+Neural network are just mathematical expressions that take input data as an input and weights of a neural network as an input and output the predictions of the neural net or the loss function. They are just are certain class of mathematical functions that are particularly well-suited for modeling complex relationships in data.
+
+Micrograd does something that would be excessive in production; it is a scalar valued autograd engine. In other words, it works on individual numbers (scalars) rather than on arrays or tensors. This makes it simpler and easier to understand, but also less efficient for large-scale computations. It is only done so we understand the core concepts of autograd and backpropagation without the added complexity of handling multi-dimensional arrays.
 
 ## 2. Build Makemore
 Source : [Youtube](https://www.youtube.com/watch?v=PaCmpygFfXo)
@@ -37,3 +64,14 @@ Building a transformer purely decoder which take an input (text from Shakespear)
 ## 4. Build GPT tokenizer
 Source : [Youtube](https://www.youtube.com/watch?v=zduSFxRajkE)
 Opposed to the previous project, who was using a somewhat naïve approach to tokenization (single characters) in reality, the tokens are almost always chunk of characters. Theses token are composed with algorithms such as the bite-pair algorithm.
+
+
+
+## Dictionary
+- Autograd : Automatic gradient. Technique to automatically compute the gradient of a function.
+- Backpropagation : Method that allow you to efficiently compute the gradient of a loss function with respect to the weights of a neural network.
+- Forward pass : the process in which you pass an input through a neural network to obtain an output.
+- Derivative : Measure of how a function changes as its input changes. In the context of neural networks, derivatives are used to compute gradients during backpropagation.
+- Slope : How much the output of a function changes after a smal (or not) change in input. A slope is negative if the impact of the change is towards a decrease of the output, and positive if it is towards an increase of the output.
+- Gradient : Vector that contains all the partial derivatives of a function with respect to its inputs. In neural networks, gradients are used to update the weights during training.
+- Gradient checking : Technique used to verify the correctness of the gradients computed by backpropagation. It involves comparing the analytically computed gradients with numerically approximated gradients.
