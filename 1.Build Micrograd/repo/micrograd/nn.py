@@ -1,6 +1,6 @@
 # library run on top of the neural network to optimize the weights based on the computed gradients
 import random
-from engine import Value
+from micrograd.engine import Value
 
 class Module:
 

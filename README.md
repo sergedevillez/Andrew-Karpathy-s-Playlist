@@ -35,16 +35,21 @@ Micrograd does something that would be excessive in production; it is a scalar v
 
 ## 2. Build Makemore
 Source : [Youtube](https://www.youtube.com/watch?v=PaCmpygFfXo)
+
 Source : [Youtube - Part 2](https://www.youtube.com/watch?v=TCH_1BHY58I)
+
 Source : [Youtube - Part 3](https://www.youtube.com/watch?v=P6sfmUTpUmc)
+
 Source : [Youtube - Part 4](https://www.youtube.com/watch?v=q8SA3rM6ckI)
+
 Source : [Youtube - Part 5](https://www.youtube.com/watch?v=t3YJ5hKiMQ0)
+
 Construction of:
 - Bigram (one character predict the enxt one wit a lookup table of counts)
 - Bags of words
-- MLP
-- RNN
-- GRU
+- MLP (Multi-layer perceptron)
+- RNN (Recurrent Neural Network)
+- GRU (Gated Recurrent Unit)
 - Transformer (equivalent to GPT 2;with of course far less data and training)
 
 => This construct single words (in this case: "name"-like single words)
@@ -77,3 +82,6 @@ Opposed to the previous project, who was using a somewhat naïve approach to tok
 - Gradient checking : Technique used to verify the correctness of the gradients computed by backpropagation. It involves comparing the analytically computed gradients with numerically approximated gradients.
 - Topological sort : Linear ordering of nodes in a directed graph such that for every directed edge from node A to node B, node A comes before node B in the ordering. In the context of computational graphs, topological sorting is used to determine the order in which nodes should be processed during backpropagation.
 - Loss function : Function that measures the difference between the predicted output of a neural network and the actual target values. The goal of training is to minimize the loss function, get closer to zero.
+- Learning rate decay : Technique used to gradually decrease the learning rate during training. This helps to stabilize the training process and can lead to better convergence.
+- Regularization : Technique used to prevent overfitting in neural networks by adding a penalty term to the loss function. Common regularization techniques include L1 and L2 regularization, dropout, and early stopping.
+- Training loop : Iterative process of training a neural network, which typically involves the following steps: forward pass, loss computation, backward pass (backpropagation), and weight update.
