@@ -1,0 +1,84 @@
+# Editor/IDE
+.idea/
+.vscode/
+.vs/
+*.user
+*.suo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.pytype/
+.pyre/
+# Editor / IDE
+.idea/
+.vscode/
+.vs/
+*.user
+*.suo
+
+# Common build folders (match anywhere in the repo)
+[Bb]in/
+[Oo]bj/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+venv.bak/
+venv-*/
+
+# Packaging / distribution
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+.eggs/
+*.egg
+*.whl
+
+# Testing / coverage / type checkers
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.pytype/
+.pyre/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment & secrets
+.env
+.env.*
+local_settings.py
+
+# Tool caches
+.cache/
+.tox/
+.nox/
+
+# Database / logs
+*.sqlite3
+*.db
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.pyc
+*.pyo
+*.pyd

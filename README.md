@@ -85,3 +85,45 @@ Opposed to the previous project, who was using a somewhat naïve approach to tok
 - Learning rate decay : Technique used to gradually decrease the learning rate during training. This helps to stabilize the training process and can lead to better convergence.
 - Regularization : Technique used to prevent overfitting in neural networks by adding a penalty term to the loss function. Common regularization techniques include L1 and L2 regularization, dropout, and early stopping.
 - Training loop : Iterative process of training a neural network, which typically involves the following steps: forward pass, loss computation, backward pass (backpropagation), and weight update.
+- Broadcasting : Technique used in tensor operations to make arrays with different shapes compatible for element-wise operations. It involves "stretching" the smaller array along the dimensions of the larger array without actually copying data.
+    - Broadcasting rules :
+        1. If the arrays have a different number of dimensions, the shape of the smaller-dimensional array is padded with ones on the left side until both shapes have the same length.
+            - Example : 
+                - Array A shape : (4,3,2)
+                - Array B shape : (3,2)
+                - Padded Array B shape : (1,3,2)
+        2. The sizes of the arrays are compared element-wise from right to left. Two dimensions are compatible when:
+            - They are equal, or
+            - One of them is 1
+                - Example :
+                    - Padded Array B shape : (1,3,2)
+                    - Array A shape : (4,3,2)
+                    - Comparison from right to left :
+                        - 2 and 2 are equal => compatible
+                        - 3 and 3 are equal => compatible
+                        - 1 and 4 => one of them is 1 => compatible
+        3. If the sizes of the arrays are not compatible, an error is raised.
+            - Example :
+                - Array A shape : (4,3,2)
+                - Array B shape : (2,2)
+                - Comparison from right to left :
+                    - 2 and 2 are equal => compatible
+                    - 3 and 2 are not equal and neither is 1 => not compatible => error
+        4. If one of the dimensions is 1, the array is "stretched" along that dimension to match the size of the other array.
+            - Example :
+                - Padded Array B shape : (1,3,2)
+                - Array A shape : (4,3,2)
+                - Stretched Padded Array B shape : (4,3,2)
+        5. The resulting array has a shape that is the maximum size along each dimension of the input arrays.
+            - Example :
+                - Array A shape : (4,3,2)
+                - Array B shape : (1,6,2)
+                - Resulting array shape : (4,6,2)
+    - Rules to follow:
+        - Align shapes to the right
+            - Example :
+                - Array A shape : (4,3,2)
+                - Array B shape :   (3,2)
+        - All dimensions must be equal, equal to 1 or missing
+        - Missing dimensions are treated as 1
+        - Resulting shape is the maximum size along each dimension
