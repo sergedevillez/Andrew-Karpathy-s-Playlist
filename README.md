@@ -128,3 +128,4 @@ Opposed to the previous project, who was using a somewhat naïve approach to tok
         - Missing dimensions are treated as 1
         - Resulting shape is the maximum size along each dimension
 - Statistical modeling : Process of using statistical methods to analyze and interpret data in order to make predictions or draw conclusions about a population based on a sample.
+- Monotonic function : Function that is either entirely non-increasing or non-decreasing over its domain. In other words, a monotonic function preserves the order of its input values.
