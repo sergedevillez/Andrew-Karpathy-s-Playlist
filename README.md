@@ -127,3 +127,4 @@ Opposed to the previous project, who was using a somewhat naïve approach to tok
         - All dimensions must be equal, equal to 1 or missing
         - Missing dimensions are treated as 1
         - Resulting shape is the maximum size along each dimension
+- Statistical modeling : Process of using statistical methods to analyze and interpret data in order to make predictions or draw conclusions about a population based on a sample.
