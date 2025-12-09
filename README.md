@@ -129,3 +129,4 @@ Opposed to the previous project, who was using a somewhat naïve approach to tok
         - Resulting shape is the maximum size along each dimension
 - Statistical modeling : Process of using statistical methods to analyze and interpret data in order to make predictions or draw conclusions about a population based on a sample.
 - Monotonic function : Function that is either entirely non-increasing or non-decreasing over its domain. In other words, a monotonic function preserves the order of its input values.
+- Smoothing : Technique used to reduce noise or fluctuations in data, often by applying a mathematical function or algorithm to the data points. This is a fix that allow the model to not faces -inf loss when a single data point is mispredicted with high confidence.
