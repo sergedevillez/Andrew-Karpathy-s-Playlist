@@ -35,6 +35,13 @@ Micrograd does something that would be excessive in production; it is a scalar v
 
 ## 2. Build Makemore
 Source : [Youtube](https://www.youtube.com/watch?v=PaCmpygFfXo)
+- Introduce the bigram character level language model
+- How to train the model
+- How to sample from the model
+- How we evaluate the quality of the model using the negative log likelihood loss (NLL Loss)
+- Then we evaluate the model on two way.
+    - We counted the frquency of each bigram in the training dataset then normalized them to get the true probabilities of each bigram.
+    - We used the negative log likelihood as a guide to optimizing the count arrays to minimize the loss.
 
 Source : [Youtube - Part 2](https://www.youtube.com/watch?v=TCH_1BHY58I)
 
@@ -73,6 +80,8 @@ Opposed to the previous project, who was using a somewhat naïve approach to tok
 
 
 ## Dictionary
+
+### First part
 - Autograd : Automatic gradient. Technique to automatically compute the gradient of a function.
 - Backpropagation : Method that allow you to efficiently compute the gradient of a loss function with respect to the weights of a neural network.
 - Forward pass : the process in which you pass an input through a neural network to obtain an output.
@@ -130,3 +139,9 @@ Opposed to the previous project, who was using a somewhat naïve approach to tok
 - Statistical modeling : Process of using statistical methods to analyze and interpret data in order to make predictions or draw conclusions about a population based on a sample.
 - Monotonic function : Function that is either entirely non-increasing or non-decreasing over its domain. In other words, a monotonic function preserves the order of its input values.
 - Smoothing : Technique used to reduce noise or fluctuations in data, often by applying a mathematical function or algorithm to the data points. This is a fix that allow the model to not faces -inf loss when a single data point is mispredicted with high confidence.
+- Gradient-based optimization : Class of optimization algorithms that use the gradient of the loss function to update the model parameters in order to minimize the loss. Examples include Stochastic Gradient Descent (SGD), Adam, and RMSprop.
+- Softmax : Mathematical function that converts a vector of real numbers into a probability distribution. It is commonly used in the output layer of neural networks for multi-class classification problems.
+    - In others actual usage: Exponentiation of each element followed by normalization.
+
+### Second part
+- MLM or Multi Layered Model
